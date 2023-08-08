@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styles.css">
     <title>Scavenger Hunt</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="container">
@@ -12,12 +12,16 @@
             <input type="text" id="answer" placeholder="Enter your answer">
             <button id="submit">Submit</button>
         </div>
+        <div id="progress-container">
+            <h2>Your Progress</h2>
+            <ul id="progress-list"></ul>
+        </div>
     </div>
 
     <script>
         const hints = [
-            { text: "Great job! Your next hint is: Roses are red, violets are blue, I'm a fruit, and you'll find me in a bowl.", answer: "apple" },
-            { text: "You're on fire! Here's your next hint: I have keys but open no locks. I have space but no room. You can enter but not go outside. What am I?", answer: "keyboard" },
+            { text: "Roses are red, violets are blue, I'm a fruit, and you'll find me in a bowl.", answer: "apple" },
+            { text: "I have keys but open no locks. I have space but no room. You can enter but not go outside. What am I?", answer: "keyboard" },
             // Add more hints and answers as needed
         ];
 
@@ -25,6 +29,7 @@
         const hintElement = document.getElementById("hint");
         const answerInput = document.getElementById("answer");
         const submitButton = document.getElementById("submit");
+        const progressList = document.getElementById("progress-list");
 
         function displayHint(index) {
             hintElement.textContent = hints[index].text;
@@ -39,6 +44,9 @@
             currentHintIndex++;
             if (currentHintIndex < hints.length) {
                 displayHint(currentHintIndex);
+                const li = document.createElement("li");
+                li.textContent = hints[currentHintIndex - 1].text + " (Answer: " + hints[currentHintIndex - 1].answer + ")";
+                progressList.appendChild(li);
             } else {
                 hintElement.textContent = "Congratulations, you've completed the scavenger hunt!";
                 answerInput.style.display = "none";
