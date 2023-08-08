@@ -1,0 +1,76 @@
+/* Reset some default styles */
+body, h1, p, input, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: #000;
+    color: #0f0;
+}
+
+#container {
+    text-align: center;
+    padding: 100px;
+}
+
+#hint-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #0f0;
+    background-color: #111;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+#hint {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 300px;
+    font-size: 16px;
+    background-color: #333;
+    border: 1px solid #0f0;
+    color: #0f0;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0c0;
+}
+
+/* Additional styles for a hacker-themed look */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://your-image-url.jpg') center/cover no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+#container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #0f0;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 0 20px #0f0;
+}
