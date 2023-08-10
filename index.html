@@ -5,7 +5,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
+    <div id="password-container">
+        <h1>Enter the Password</h1>
+        <input type="password" id="password" placeholder="Password">
+        <button id="password-submit">Submit</button>
+    </div>
+    <div id="container" style="display: none;">
         <h1>Scavenger Hunt</h1>
         <div id="hint-container">
             <p id="hint">Welcome to the scavenger hunt! Your adventure starts here.</p>
@@ -19,6 +24,25 @@
     </div>
 
     <script>
+        const correctPassword = "yourpassword"; // Change this to your desired password
+        let passwordEntered = false;
+
+        const passwordContainer = document.getElementById("password-container");
+        const passwordInput = document.getElementById("password");
+        const passwordSubmitButton = document.getElementById("password-submit");
+        const scavengerHuntContainer = document.getElementById("container");
+        
+        passwordSubmitButton.addEventListener("click", function () {
+            const enteredPassword = passwordInput.value;
+            if (enteredPassword === correctPassword) {
+                passwordContainer.style.display = "none";
+                scavengerHuntContainer.style.display = "block";
+            } else {
+                alert("Incorrect password. Please try again.");
+                passwordInput.value = "";
+            }
+        });
+
         const hints = [
             { text: "Roses are red, violets are blue, I'm a fruit, and you'll find me in a bowl.", answer: "apple" },
             { text: "I have keys but open no locks. I have space but no room. You can enter but not go outside. What am I?", answer: "keyboard" },
@@ -68,3 +92,4 @@
     </script>
 </body>
 </html>
+
