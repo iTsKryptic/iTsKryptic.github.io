@@ -114,25 +114,28 @@
         }
 
         function initiateSlideshow() {
-            scavengerHuntContainer.style.display = "none";
-            slideshowContainer.style.display = "block";
-            
-            // Add the 'happy' class to the body to transition to the happy theme
-            document.body.classList.add("happy");
+    scavengerHuntContainer.style.display = "none";
+    slideshowContainer.style.display = "block";
 
-            let currentImageIndex = 0;
-            function showNextImage() {
-                if (currentImageIndex < happyImages.length) {
-                    const image = document.createElement("img");
-                    image.src = happyImages[currentImageIndex];
-                    image.className = "image";
-                    slideshow.appendChild(image);
-                    currentImageIndex++;
-                    setTimeout(showNextImage, 2000); // Change the delay between images if needed
-                }
-            }
+    // Add the 'happy' class to the body to transition to the happy theme
+    document.body.classList.add("happy");
+
+    let currentImageIndex = 0;
+
+    function showNextImage() {
+        if (currentImageIndex < happyImages.length) {
+            const image = document.createElement("img");
+            image.src = happyImages[currentImageIndex];
+            image.className = "image";
+            slideshow.appendChild(image);
+            currentImageIndex++;
             showNextImage();
         }
+    }
+
+    showNextImage();
+}
+
 
         submitButton.addEventListener("click", function () {
             const userAnswer = answerInput.value;
