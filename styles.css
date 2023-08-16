@@ -9,56 +9,17 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
-}
-
-/* Password container styles */
-#password-container {
+    line-height: 1.6;
     text-align: center;
-    margin-top: 100px;
 }
 
 /* Container styles */
-#container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-/* Slideshow container styles */
-#slideshow-container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-/* Slideshow image styles */
-#slideshow {
+#password-container, #container, #slideshow-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-}
-
-.image {
-    width: 100px;
-    height: auto;
-    margin: 0 20px;
-    opacity: 0;
-    transform: scale(0);
-    animation: slideAndScale 2s ease forwards;
-}
-
-@keyframes slideAndScale {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    height: 100vh;
 }
 
 /* Header styles */
@@ -66,11 +27,6 @@ h1 {
     font-size: 28px;
     margin-bottom: 20px;
     color: #333;
-}
-
-/* Hint container styles */
-#hint-container {
-    margin-top: 20px;
 }
 
 /* Hint styles */
@@ -81,18 +37,21 @@ h1 {
 
 /* Answer input styles */
 #answer {
-    padding: 5px;
+    padding: 8px;
     width: 300px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 /* Submit button styles */
 #submit {
-    padding: 5px 10px;
+    padding: 8px 16px;
     font-size: 16px;
     background-color: #007bff;
     color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -117,4 +76,21 @@ h1 {
     margin-bottom: 5px;
     font-size: 14px;
     color: #777;
+}
+
+/* Slideshow image styles */
+#slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.image {
+    width: auto;
+    max-height: 60vh;
+    margin: 0 20px;
+    opacity: 0;
+    transform: scale(0);
+    animation: slideAndScale 2s ease forwards;
 }
