@@ -4,7 +4,8 @@
     <title>Scavenger Hunt</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="hacker"> <!-- Add the 'hacker' class to body initially -->
+
     <div id="password-container">
         <h1>Enter the Password check behind the candle box!</h1>
         <input type="password" id="password" placeholder="Password">
@@ -43,19 +44,6 @@
             "pictures/1.jpg", // Replace with your local image URLs
             "pictures/2.jpg",
             "pictures/3.jpg",
-            "pictures/4.jpg",
-            "pictures/5.jpg",
-            "pictures/6.jpg",
-            "pictures/7.jpg",
-            "pictures/8.jpg",
-            "pictures/9.jpg",
-            "pictures/10.jpg",
-            "pictures/11.jpg",
-            "pictures/12.jpg",
-            "pictures/13.jpg",
-            "pictures/14.jpg",
-            "pictures/15.jpg",
-            "pictures/16.jpg",
             // Add more image URLs
         ];
 
@@ -74,7 +62,6 @@
             { text: "Only elite hackers can figure this one out, you'll find hints under your candles!", answer: "l3337hax" },
             { text: "You've done well to make it this far, find your next clue on your shirt tags!", answer: "love" },
             { text: "YOUR FINAL TASK, the other shirt tag!", answer: "you" },
-
             // Add more hints and answers as needed
         ];
 
@@ -111,13 +98,16 @@
         function initiateSlideshow() {
             scavengerHuntContainer.style.display = "none";
             slideshowContainer.style.display = "block";
-            document.body.style.backgroundColor = "#ffc107"; // Change background color to a happy theme
+            
+            // Add the 'happy' class to the body to transition to the happy theme
+            document.body.classList.add("happy");
 
             let currentImageIndex = 0;
             function showNextImage() {
                 if (currentImageIndex < happyImages.length) {
                     const image = document.createElement("img");
                     image.src = happyImages[currentImageIndex];
+                    image.className = "image";
                     slideshow.appendChild(image);
                     currentImageIndex++;
                     setTimeout(showNextImage, 2000); // Change the delay between images if needed
