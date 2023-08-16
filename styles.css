@@ -6,31 +6,35 @@ body, h1, p, input, button {
 }
 
 body {
-    background-color: #000;
     color: #0f0;
     overflow: hidden;
+    transition: background-color 1s, color 1s;
 }
 
 #container {
     text-align: center;
     padding: 100px;
+    transition: background-color 1s, border-color 1s, box-shadow 1s;
 }
 
 #hint-container {
     margin-top: 20px;
     padding: 20px;
-    border: 2px solid #0f0;
-    background-color: #111;
     border-radius: 10px;
+    background-color: #111;
+    border: 2px solid #0f0;
+    transition: background-color 1s, box-shadow 1s;
 }
 
 h1 {
     font-size: 36px;
+    transition: color 1s;
 }
 
 #hint {
     font-size: 18px;
     margin-bottom: 10px;
+    transition: color 1s;
 }
 
 input[type="text"] {
@@ -56,60 +60,88 @@ button:hover {
 }
 
 /* Hacker-themed styles */
-body::before {
+body.hacker::before {
     content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://your-image-url.jpg') center/cover no-repeat;
+    background: url('https://your-hacker-image-url.jpg') center/cover no-repeat;
     opacity: 0.2;
     z-index: -1;
 }
 
-#container {
+body.hacker {
+    background-color: #000;
+}
+
+#container.hacker {
     background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid #0f0;
-    border-radius: 10px;
-    padding: 50px;
+    border-color: #0f0;
     box-shadow: 0 0 20px #0f0;
 }
 
-#hint-container {
+#hint-container.hacker {
     background-color: #000;
-    border: 2px solid #0f0;
     box-shadow: 0 0 10px #0f0;
 }
 
-h1 {
-    font-size: 48px;
+h1.hacker {
     color: #0f0;
 }
 
-#hint {
-    font-size: 24px;
+#hint.hacker {
     color: #0f0;
 }
 
-input[type="text"] {
-    padding: 10px;
-    width: 80%;
-    font-size: 20px;
+input[type="text"].hacker {
     background-color: #333;
-    border: 2px solid #0f0;
+    border-color: #0f0;
     color: #0f0;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 24px;
+button.hacker {
     background-color: #0f0;
     color: #000;
-    border: none;
-    cursor: pointer;
 }
 
-button:hover {
-    background-color: #0c0;
+/* Happy-themed styles */
+body.happy {
+    background-color: #ffd700;
+    color: #333;
+}
+
+#container.happy {
+    background-color: #fff;
+    border-color: #ffd700;
+    box-shadow: 0 0 20px #ffd700;
+}
+
+#hint-container.happy {
+    background-color: #ffd700;
+    box-shadow: 0 0 10px #ffd700;
+}
+
+h1.happy {
+    color: #ff4500;
+}
+
+#hint.happy {
+    color: #ff4500;
+}
+
+input[type="text"].happy {
+    background-color: #fff;
+    border-color: #ff4500;
+    color: #ff4500;
+}
+
+button.happy {
+    background-color: #ff4500;
+    color: #fff;
+}
+
+button.happy:hover {
+    background-color: #ff8c00;
 }
