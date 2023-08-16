@@ -16,7 +16,15 @@ body {
     padding: 100px;
     transition: background-color 1s, border-color 1s, box-shadow 1s;
 }
-
+#slideshow-container p {
+    font-size: 24px; /* Adjust the font size as desired */
+}
+.image {
+    max-width: 60%; /* Adjust the maximum width of the images as desired */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 #hint-container {
     margin-top: 20px;
     padding: 20px;
