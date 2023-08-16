@@ -44,8 +44,10 @@
         });
 
         const hints = [
-            { text: "Roses are red, violets are blue, I'm a fruit, and you'll find me in a bowl.", answer: "apple" },
-            { text: "I have keys but open no locks. I have space but no room. You can enter but not go outside. What am I?", answer: "keyboard" },
+            { text: "Only elite hackers can figure this one out, you'll find hints under your candles!", answer: "apple" },
+            { text: "You've done well to make it this far, find your next clue on your shirt tags!", answer: "love" },
+            { text: "YOUR FINAL TASK, the other shirt tag!", answer: "you" },
+
             // Add more hints and answers as needed
         ];
 
@@ -72,7 +74,7 @@
                 li.textContent = hints[currentHintIndex - 1].text + " (Answer: " + hints[currentHintIndex - 1].answer + ")";
                 progressList.appendChild(li);
             } else {
-                hintElement.textContent = "Congratulations, you've completed the scavenger hunt!";
+                hintElement.textContent = "Congratulations, you've sucessfully hacked the box!";
                 answerInput.style.display = "none";
                 submitButton.style.display = "none";
             }
