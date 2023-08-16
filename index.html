@@ -113,7 +113,7 @@
             }
         }
 
-        function initiateSlideshow() {
+    function initiateSlideshow() {
     scavengerHuntContainer.style.display = "none";
     slideshowContainer.style.display = "block";
 
@@ -127,9 +127,13 @@
             const image = document.createElement("img");
             image.src = happyImages[currentImageIndex];
             image.className = "image";
+            image.style.animation = "fade 3s ease-in-out"; // Apply fade animation
             slideshow.appendChild(image);
             currentImageIndex++;
-            showNextImage();
+            image.addEventListener("animationend", function () {
+                slideshow.removeChild(image);
+                showNextImage();
+            });
         }
     }
 
