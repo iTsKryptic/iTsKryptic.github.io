@@ -1,96 +1,115 @@
-/* Reset default margin and padding */
-body, h1, h2, p, ul, li {
+/* Reset some default styles */
+body, h1, p, input, button {
     margin: 0;
     padding: 0;
+    font-family: 'Courier New', monospace;
 }
 
-/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6;
+    background-color: #000;
+    color: #0f0;
+    overflow: hidden;
+}
+
+#container {
     text-align: center;
+    padding: 100px;
 }
 
-/* Container styles */
-#password-container, #container, #slideshow-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+#hint-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #0f0;
+    background-color: #111;
+    border-radius: 10px;
 }
 
-/* Header styles */
 h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 36px;
 }
 
-/* Hint styles */
 #hint {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-/* Answer input styles */
-#answer {
-    padding: 8px;
+input[type="text"] {
+    padding: 5px;
     width: 300px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #333;
+    border: 1px solid #0f0;
+    color: #0f0;
 }
 
-/* Submit button styles */
-#submit {
-    padding: 8px 16px;
+button {
+    padding: 5px 10px;
     font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #0f0;
+    color: #000;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-#submit:hover {
-    background-color: #0056b3;
+button:hover {
+    background-color: #0c0;
 }
 
-/* Progress container styles */
-#progress-container {
-    margin-top: 20px;
-    text-align: left;
+/* Hacker-themed styles */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://your-image-url.jpg') center/cover no-repeat;
+    opacity: 0.2;
+    z-index: -1;
 }
 
-/* Progress list styles */
-#progress-list {
-    list-style: none;
+#container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #0f0;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 0 20px #0f0;
 }
 
-/* Progress list item styles */
-#progress-list li {
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #777;
+#hint-container {
+    background-color: #000;
+    border: 2px solid #0f0;
+    box-shadow: 0 0 10px #0f0;
 }
 
-/* Slideshow image styles */
-#slideshow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+h1 {
+    font-size: 48px;
+    color: #0f0;
 }
 
-.image {
-    width: auto;
-    max-height: 60vh;
-    margin: 0 20px;
-    opacity: 0;
-    transform: scale(0);
-    animation: slideAndScale 2s ease forwards;
+#hint {
+    font-size: 24px;
+    color: #0f0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    font-size: 20px;
+    background-color: #333;
+    border: 2px solid #0f0;
+    color: #0f0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0c0;
 }
