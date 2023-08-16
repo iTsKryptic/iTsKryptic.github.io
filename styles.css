@@ -53,6 +53,15 @@ input[type="text"] {
     border: 1px solid #0f0;
     color: #0f0;
 }
+/* Add this CSS code to your existing CSS */
+@keyframes fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+}
 
 button {
     padding: 5px 10px;
