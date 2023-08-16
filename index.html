@@ -22,6 +22,11 @@
             <ul id="progress-list"></ul>
         </div>
     </div>
+    <div id="slideshow-container" style="display: none;">
+        <h1>Congratulations!</h1>
+        <p>You've successfully hacked the box. Happy Birthday!</p>
+        <div id="slideshow"></div>
+    </div>
 
     <script>
         const correctPassword = "yourdork"; // Change this to your desired password
@@ -31,7 +36,16 @@
         const passwordInput = document.getElementById("password");
         const passwordSubmitButton = document.getElementById("password-submit");
         const scavengerHuntContainer = document.getElementById("container");
-        
+        const slideshowContainer = document.getElementById("slideshow-container");
+        const slideshow = document.getElementById("slideshow");
+
+        const happyImages = [
+            "C:\Users\murda\Documents\GitHub\iTsKryptic.github.io\pictures\1.jpg", // Replace with your local image URLs
+            "C:\Users\murda\Documents\GitHub\iTsKryptic.github.io\pictures\2.jpg",
+            "C:\Users\murda\Documents\GitHub\iTsKryptic.github.io\pictures\3.jpg",
+            // Add more image URLs
+        ];
+
         passwordSubmitButton.addEventListener("click", function () {
             const enteredPassword = passwordInput.value;
             if (enteredPassword === correctPassword) {
@@ -74,10 +88,29 @@
                 li.textContent = hints[currentHintIndex - 1].text + " (Answer: " + hints[currentHintIndex - 1].answer + ")";
                 progressList.appendChild(li);
             } else {
-                hintElement.textContent = "Congratulations, you've sucessfully hacked the box!";
+                hintElement.textContent = "Congratulations, you've successfully hacked the box!";
                 answerInput.style.display = "none";
                 submitButton.style.display = "none";
+                initiateSlideshow();
             }
+        }
+
+        function initiateSlideshow() {
+            scavengerHuntContainer.style.display = "none";
+            slideshowContainer.style.display = "block";
+            document.body.style.backgroundColor = "#ffc107"; // Change background color to a happy theme
+
+            let currentImageIndex = 0;
+            function showNextImage() {
+                if (currentImageIndex < happyImages.length) {
+                    const image = document.createElement("img");
+                    image.src = happyImages[currentImageIndex];
+                    slideshow.appendChild(image);
+                    currentImageIndex++;
+                    setTimeout(showNextImage, 2000); // Change the delay between images if needed
+                }
+            }
+            showNextImage();
         }
 
         submitButton.addEventListener("click", function () {
@@ -94,4 +127,3 @@
     </script>
 </body>
 </html>
-
