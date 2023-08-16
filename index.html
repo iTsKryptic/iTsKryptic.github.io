@@ -92,6 +92,11 @@
                 answerInput.style.display = "none";
                 submitButton.style.display = "none";
                 initiateSlideshow();
+            if (currentHintIndex >= hints.length) {
+    initiateHappyBirthdayTheme();
+    return;
+}
+
             }
         }
 
@@ -127,6 +132,21 @@
 
         // Initialize the scavenger hunt
         displayHint(currentHintIndex);
+        function initiateHappyBirthdayTheme() {
+    // Switch to the happy birthday theme
+    document.body.classList.remove("hacker");
+    document.body.classList.add("happy");
+
+    // Hide the scavenger hunt container
+    scavengerHuntContainer.style.display = "none";
+
+    // Show the slideshow container
+    slideshowContainer.style.display = "block";
+
+    // Start the slideshow
+    initiateSlideshow();
+}
+
     </script>
 </body>
 </html>
